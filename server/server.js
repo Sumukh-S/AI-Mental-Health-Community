@@ -15,7 +15,8 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Routes will be added here
 app.use('/api/auth', require('./routes/auth'));
-app.use('/api/posts', require('./routes/posts'));
+const postsRouter = require('./routes/posts');
+app.use('/api/posts', postsRouter);
 app.use('/api/chat', require('./routes/chat'));
 app.use('/api/mood', require('./routes/mood'));
 
