@@ -1,0 +1,71 @@
+.health-container {
+  @apply min-h-screen bg-gradient-to-br from-green-50 via-teal-50 to-blue-50;
+  background-size: 400% 400%;
+  animation: healthGradient 15s ease infinite;
+}
+
+.health-card {
+  @apply bg-white/80 backdrop-blur-md rounded-2xl p-6
+         border border-white/20 transition-all duration-500
+         hover:shadow-xl hover:bg-white/90;
+}
+
+.category-button {
+  @apply px-6 py-3 rounded-xl font-medium
+         transition-all duration-300 text-center
+         hover:shadow-md;
+}
+
+.category-button.active {
+  @apply bg-gradient-to-r from-teal-500 to-green-500 text-white
+         transform scale-105;
+}
+
+.tip-card {
+  @apply bg-white/70 rounded-xl p-6 backdrop-blur-sm
+         border border-teal-100 transition-all duration-300
+         hover:shadow-lg hover:scale-[1.02] cursor-pointer;
+}
+
+.tip-title {
+  @apply text-xl font-semibold mb-3 bg-gradient-to-r
+         from-teal-600 to-green-600 bg-clip-text text-transparent;
+}
+
+.tip-description {
+  @apply text-gray-600 leading-relaxed;
+}
+
+.tip-list {
+  @apply mt-4 space-y-2;
+}
+
+.tip-item {
+  @apply flex items-center space-x-2 text-gray-700
+         transform transition-all duration-300
+         hover:translate-x-2;
+}
+
+.tip-icon {
+  @apply text-teal-500;
+}
+
+@keyframes healthGradient {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+.expand-button {
+  @apply mt-4 text-teal-600 font-medium
+         hover:text-teal-700 transition-colors;
+}
+
+.category-grid {
+  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8;
+}
+
+.loading-spinner {
+  @apply w-12 h-12 border-4 border-teal-500 border-t-transparent
+         rounded-full mx-auto animate-spin;
+} 

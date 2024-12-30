@@ -1,0 +1,83 @@
+.mood-container {
+    @apply min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50;
+    background-size: 400% 400%;
+    animation: moodGradient 15s ease infinite;
+}
+
+.mood-card {
+    @apply bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-white/20 transition-all duration-500 hover:shadow-xl hover:bg-white/90 max-w-2xl mx-auto;
+}
+
+.mood-selector {
+    @apply grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8;
+}
+
+.mood-button {
+    @apply p-4 rounded-xl text-center transition-all duration-300 border-2 border-transparent hover:shadow-lg;
+}
+
+.mood-button.selected {
+    @apply border-purple-500 bg-purple-50 transform scale-105;
+}
+
+.mood-emoji {
+    @apply text-4xl mb-2 transition-transform duration-300;
+}
+
+.intensity-slider {
+    @apply w-full h-2 bg-purple-100 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-400;
+}
+
+.intensity-slider::-webkit-slider-thumb {
+    @apply appearance-none w-6 h-6 bg-purple-500 rounded-full cursor-pointer transition-all duration-300 hover:bg-purple-600 hover:scale-110;
+}
+
+.activity-tag {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer hover:shadow-md;
+}
+
+.activity-tag.selected {
+    @apply bg-gradient-to-r from-purple-500 to-indigo-500 text-white transform scale-105;
+}
+
+.thought-input {
+    @apply w-full px-4 py-3 rounded-lg bg-white/70 border border-purple-100 resize-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all duration-300;
+}
+
+.submit-button {
+    @apply w-full py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg disabled:from-gray-400 disabled:to-gray-500;
+}
+
+.recommendations-card {
+    @apply mt-8 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 shadow-lg;
+}
+
+@keyframes moodGradient {
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+.sleep-input {
+    @apply w-24 px-3 py-2 rounded-lg bg-white/70 border border-purple-100 text-center focus:ring-2 focus:ring-purple-400 focus:border-transparent;
+}
+
+.form-section {
+    @apply mb-8 opacity-0 transform translate-y-4;
+    animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
