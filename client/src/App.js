@@ -5,9 +5,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Community from './pages/Community';
 import Games from './pages/Games';
-import Chatbot from './pages/Chatbot';
 import Health from './pages/Health';
 import MoodAnalysis from './pages/MoodAnalysis';
+import Chat from './pages/Chat';
 
 function App() {
     const { user, loading } = useAuth();
@@ -31,7 +31,7 @@ function App() {
                 <Route path="/" element={user ? <Community /> : <Navigate to="/login" />} />
                 <Route path="/community" element={user ? <Community /> : <Navigate to="/login" />} />
                 <Route path="/games" element={user ? <Games /> : <Navigate to="/login" />} />
-                <Route path="/chat" element={user ? <Chatbot /> : <Navigate to="/login" />} />
+                <Route path="/chat" element={user ? <Chat /> : <Navigate to="/login" />} />
                 <Route path="/health" element={user ? <Health /> : <Navigate to="/login" />} />
                 <Route path="/mood" element={user ? <MoodAnalysis /> : <Navigate to="/login" />} />
             </Route>

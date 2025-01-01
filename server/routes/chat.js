@@ -21,10 +21,12 @@ router.post('/message', auth, async (req, res) => {
     try {
         const { message } = req.body;
 
-        // Get Gemini response
+        // Log for debugging
+        console.log('User ID:', req.user.id);
+        console.log('Message:', message);
+
         const aiResponse = await generateResponse(message);
 
-        // Save conversation
         const chatMessage = new ChatMessage({
             user: req.user.id,
             message: message,
@@ -35,10 +37,7 @@ router.post('/message', auth, async (req, res) => {
         res.json(chatMessage);
     } catch (err) {
         console.error('Chat error:', err);
-        res.status(500).json({
-            message: 'Error processing your message',
-            error: err.message
-        });
+        res.status(500).json({ message: err.message });
     }
 });
 
